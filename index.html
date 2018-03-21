@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+</head>
+<body>
+    <button type="button" id="random-word">Click for a random word</button>
+
+    <p id="word"></p> 
+
+    <p>Your word is <span id="length"></span> letters long.</p> 
+    
+    <form id="form" onsubmit="return false;">
+        <input type="text" id="userInput" placeholder="Guess a letter..."/>
+        <input type="submit" onclick="myGuess();" />
+    </form>
+
+    <p id="build-word"></p>
+
+</body>
+<script src="main.js"></script>
+</html>
