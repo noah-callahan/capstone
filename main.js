@@ -7,28 +7,45 @@ function randomWord(){
 };
 
 var word = null;
-var badtry = 0;
-var goodtry = 0;
+var badTry = 0;
+var goodTry = 0;
 var input = null;
+var wordArr = null;
 
 document.getElementById("random-word").addEventListener("click", function(){
     document.getElementById("word").innerHTML = word = randomWord();
     document.getElementById("length").innerHTML = word.length;
+    wordArr = word.split('');
+
+    for(i=0;i<wordArr.length;i++){
+        div = i.toString();
+
+        document.getElementById(div).innerHTML = wordArr[i];
+    }
 });
 
 
 
 function myGuess() {
-     input = document.getElementById("userInput").value;
-    console.log(input);
-    if(word.includes(input)){   
+    input = document.getElementById("userInput").value;
+    if(wordArr.includes(input)){
+        console.log(wordArr);
+        console.log(input);
         alert("Yup, that's in the word.");
-        goodtry++;
+        goodTry++;
     } else {
         alert("Nope, try again.");
-        badtry++;
+        badTry++;
     }
 }
 
 
+
 //7 divs
+// var canvas = document.querySelector('canvas');
+// var c = canvas.getContext('2d');
+
+
+// c.fillRect(15, 15, 35, 65);
+// c.font = "10px Arial";
+// c.fillStyle = "red";
