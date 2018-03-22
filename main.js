@@ -16,28 +16,26 @@ document.getElementById("random-word").addEventListener("click", function(){
     document.getElementById("word").innerHTML = word = randomWord();
     document.getElementById("length").innerHTML = word.length;
     wordArr = word.split('');
-
-    for(i=0;i<wordArr.length;i++){
-        div = i.toString();
-
-        document.getElementById(div).innerHTML = wordArr[i];
-    }
 });
 
 
 
 function myGuess() {
     input = document.getElementById("userInput").value;
-    if(wordArr.includes(input)){
-        console.log(wordArr);
-        console.log(input);
-        alert("Yup, that's in the word.");
-        goodTry++;
-    } else {
-        alert("Nope, try again.");
-        badTry++;
+        if(wordArr.includes(input)){
+            a = wordArr.indexOf(input)
+            div = a.toString();
+            console.log(div);
+            console.log(wordArr);
+            console.log(input);
+            document.getElementById(div).innerHTML = wordArr[a]
+            alert("Yup, that's in the word.");
+            goodTry++;
+            } else {
+                alert("Nope, try again.");
+                badTry++;
+        }
     }
-}
 
 
 
