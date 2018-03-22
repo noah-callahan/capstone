@@ -23,20 +23,37 @@ document.getElementById("random-word").addEventListener("click", function(){
 function myGuess() {
     input = document.getElementById("userInput").value;
         if(wordArr.includes(input)){
-            a = wordArr.indexOf(input)
-            div = a.toString();
-            console.log(div);
-            console.log(wordArr);
-            console.log(input);
-            document.getElementById(div).innerHTML = wordArr[a]
-            alert("Yup, that's in the word.");
-            goodTry++;
-            } else {
-                alert("Nope, try again.");
-                badTry++;
+            for(i = 0; i < wordArr.length; i++)
+            if (wordArr[i] == input){
+                div = String(i);
+                a = wordArr[i];
+                document.getElementById(div).innerHTML = input;
+            } 
+        } else {
+            alert("Sorry, try again!");
         }
-    }
+}
 
+
+
+    // if(wordArr.includes(input)){
+    //     alert("Yup, that's in the word.");
+    //     goodTry++;
+    //     } else {
+    //         alert("Nope, try again.");
+    //         badTry++;
+    // }
+    
+
+    // a = wordArr.indexOf(input)
+    // div = a.toString();
+    // console.log(div);
+    // console.log(wordArr);
+    // console.log(input);
+    // document.getElementById(div).innerHTML = wordArr[a]
+
+
+    //start at index of a
 
 
 //7 divs
