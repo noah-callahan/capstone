@@ -1,10 +1,10 @@
 // var alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 
-var words = ["hotel","philadelphia","recliner","summer","programmer","subway","airplane","mouse","spaghetti","skateboard","bicycle"]
+var words = ["hotel","philadelphia","recliner","summer","programmer","subway","airplane","mouse","spaghetti","skateboard","bicycle","apprentice","anniversary"]
 
-var hints = ["A place you stay on vacation", "A city","Something you sit on", "A season", "A profession", "A form of public transportation","A form of transportation", "An animal or computer peripheral","A food", "Bart Simpson likes to ride this","A form of transportation driven by exertion"]
+var hints = ["A place you stay on vacation.", "A city.","Something you sit on.", "A season.", "A profession.", "A form of public transportation.","A form of transportation.", "An animal or computer peripheral.","A food.", "Bart Simpson likes to ride this.","A form of transportation driven by exertion.","Your title when you first start a profession.","You'll be sleeping on the couch on this night, if you forget about this day."]
 
-var points = [10, 25, 50, 75, 100];
+var points = [10, 15, 25, 50, 75, 100];
 
 var worth = null;
 var word = null;
@@ -22,6 +22,7 @@ function randomWord(){
 worth = points[Math.floor(Math.random() * points.length)];
 
 function randomPoints(){
+    worth = points[Math.floor(Math.random() * points.length)];
     return worth;
 };
 
@@ -54,17 +55,19 @@ function myGuess() {
                     goodTry++;
                     score += worth;
                     document.getElementById("total-score").innerHTML = score;
-                    document.getElementById("turn-points").innerHTML = worth;
                 }
                 } else {
                     alert("Sorry, try again!");
                     badTry++;
                     document.getElementById("bad-try").innerHTML = badTry;
-                    document.getElementById("turn-points").innerHTML = worth;
+                    score -= 25;
+                    document.getElementById("total-score").innerHTML = score;
                 } if(badTry == 4){
                     alert("Sorry, you lost!");
                     location.reload();
                 }
+                randomPoints()
+                document.getElementById("turn-points").innerHTML = worth;
 }
 
 //worth = points[Math.floor(Math.random() * points.length)]
