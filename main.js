@@ -14,6 +14,8 @@ var input = null;
 var wordArr = null;
 var index = null;
 var score = null;
+var music = null;
+var music_icon = null;
 
 function randomWord(){
     return words[Math.floor(Math.random() * words.length)];
@@ -26,8 +28,16 @@ function randomPoints(){
     return worth;
 };
 
+document.getElementById("music-icon").addEventListener("click", function pausePlay(){
+    music_icon = document.getElementById("music-icon").src = "sad.png";
+    music = document.getElementById("music");
+    music.pause();
+});
+
+
 document.getElementById("random-word").addEventListener("click", function(){
-    document.getElementById("word").innerHTML = word = randomWord();
+    word = randomWord();
+    console.log(word);
     document.getElementById("length").innerHTML = word.length;
     index = words.indexOf(word);
     document.getElementById("hint").innerHTML = hints[index];

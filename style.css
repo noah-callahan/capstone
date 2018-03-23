@@ -1,12 +1,28 @@
+html body {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn-primary{
+    margin-right: 5px;
+    font-weight: bold;
+}
+
+.bold {
+    font-weight: bold;
+}
+
 .word-area {
     border: 2px solid black;
     width: 900px;
     height: 200px;
     margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .word-area div {
-    height: 35px;
+    height: 45px;
     width: 30px;
     float: left;
     border: 2px solid black;
@@ -14,5 +30,20 @@
     margin-top: 8%;
     margin-right: 20px;
     text-align: center;
-    margin-left: 20px;   
+    margin-left: 24px; 
+    
+}
+
+.info {
+
+
+
+}
+
+
+#music-icon{
+    width: 75px;
+    height: 75px;
+    position: relative;
+    left: 200px;
 }
