@@ -45,5 +45,9 @@ html body {
     width: 75px;
     height: 75px;
     position: relative;
-    left: 200px;
+    left: 300px;
+}
+
+#music-icon:hover{
+    cursor: pointer;
 }
