@@ -6,6 +6,8 @@ var hints = ["A place you stay on vacation.", "A city.","Something you sit on.",
 
 var points = [10, 15, 25, 50, 75, 100];
 
+var popup = document.getElementById('myModal');
+var span = document.getElementsByClassName("close")[0];
 var worth = null;
 var word = null;
 var badTry = 0;
@@ -56,6 +58,9 @@ document.getElementById("reset").addEventListener("click", function(){
     location.reload();
 });
 
+document.getElementById("redirect").addEventListener("click", function(){
+    location.href = "http://www.google.com";
+});
 
 
 function myGuess() {
@@ -80,7 +85,12 @@ function myGuess() {
                     alert("Sorry, you lost!");
                     location.reload();
                 } if(goodTry == wordArr.length){
-                    alert("You win!");
+                    setTimeout(function() {
+                        popup.style.display = "block";
+                    }, 500);
+                    span.onclick = function() {
+                        popup.style.display = "none";
+                    }
                 }
                 
                 randomPoints()

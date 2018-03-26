@@ -7,16 +7,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
     <link rel="stylesheet" href="bootstrap-4.0.0-dist/css/bootstrap.min.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Mukta" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Shrikhand" rel="stylesheet">
 </head>
 
-<audio autoplay id="music"><source src="background.mp3" type="audio/mp3"></audio>
+<audio autoplay loop id="music"><source src="background.mp3" type="audio/mp3"></audio>
 
 <body>
+
+        <div id="myModal">
+
+                <div>
+                    <span class="close">[&times;]</span>
+                    <h1>You win!</h1>
+                    <h2>Play Again?</h2>
+                    
+                    <button type="button" class="btn-primary" id="reset">Sure</button>
+                    <button button type="button" class="btn-danger bold" id="redirect">Nah</button>
+            
+                </div>
+            
+        </div>
+
+
+    <h1 class="heading">Guess That Word!</h1>
 
 <div>
     <button type="button" id="random-word" class="btn-primary">Click for a random word</button>
     
-    <button button type="button" id="reset" class="btn-danger bold">Reset</button>
+    <button type="button" id="reset" class="btn-danger bold" onclick="location.reload();">Reset</button>
+
 </div>
     <img src="happy.png" alt="" id="music-icon">
 
@@ -24,7 +44,7 @@
         <div id="0"></div><div id="1"></div><div id="2"></div><div id="3"></div><div id="4"></div><div id="5"></div><div id="6"></div><div id="7"></div><div id="8"></div><div id="9"></div><div id="10"></div><div id="11"></div>
     </div>
 
-    <p class="info">Your word is <span id="length">0</span> letters long. Turn points are random up to 100. Wrong answers reduce your score by 25! If you get 4 wrong choices, you lose!</p> 
+    <p class="info">Your word is <span id="length" class="important">0</span> letters long. Turn points are random up to 100. Wrong answers reduce your score by 25! If you get 4 wrong choices, you lose!</p> 
     
     <form id="form" onsubmit="return false;">
         <input type="text" id="userInput" placeholder="Guess a letter..."/>
@@ -33,13 +53,13 @@
 
     <p id="build-word"></p>
 
-    <p>Hint: <span id="hint">Get a word</span></p>
+    <p class="info">Hint: <span id="hint">Get a word</span></p>
 
-    <p>Incorrect guesses: <span id="bad-try">0</span></p>
+    <p class="info">Incorrect guesses: <span id="bad-try" class="incorrect">0</span></p>
 
-    <p>This turn is worth: <span id="turn-points">0</span> points.</p>
+    <p class="info">This turn is worth: <span id="turn-points" class="important">0</span> points.</p>
 
-    <p>Your score is: <span id="total-score">0</span></p>
+    <p class="info">Your score is: <span id="total-score" class="important">0</span></p>
 
 </body>
 <script src="main.js"></script>

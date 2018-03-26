@@ -1,7 +1,41 @@
 html body {
     text-align: center;
     margin-top: 20px;
-    background-color: lightblue;
+    background-color: rgb(173, 215, 229);
+}
+
+#myModal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    
+}
+
+#myModal div {
+    margin: auto;
+    margin-top: 15%;
+    height: 175px;
+    width: 400px;
+    text-align: center;
+    background-color: rgb(173, 216, 230, 0.9);
+    color: black;
+    border: 4px solid black;
+    padding: 10px;
+    font-family: 'Shrikhand', cursive;
+    border-radius: 5px;
+}
+
+
+.heading{
+    padding: 20px;
+    font-family: 'Shrikhand', cursive;
 }
 
 .btn-primary{
@@ -20,27 +54,34 @@ html body {
     margin: auto;
     margin-top: 20px;
     margin-bottom: 20px;
-    box-shadow: 5px 10px;
+    box-shadow: 5px 5px;
     border-radius: 5px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px black;
+    background-color: rgb(111, 179, 243);
 }
 
 .word-area div {
     height: 45px;
-    width: 30px;
+    width: 34px;
     float: left;
-    border: 2px solid black;
+    border: 3px solid black;
     font-size: 30px;
     margin-top: 8%;
     margin-right: 20px;
     text-align: center;
-    margin-left: 24px; 
+    margin-left: 20px;
+    color: hsl(209, 100%, 49%);
+    font-weight: bold;
+    text-align: center;
+    background-color: white;
     
 }
 
 .info {
-
-
-
+    font-family: 'Mukta', sans-serif;
+    font-weight: bold;
+    font-size: 18px;
 }
 
 
@@ -54,4 +95,20 @@ html body {
 #music-icon:hover{
     cursor: pointer;
     transform: scale(1.1);
+}
+
+.important {
+    font-size: 30px;
+    color: #0082F9;
+    font-weight: bold;
+    text-shadow: 2px 2px black;
+    padding: 2px;
+}
+
+.incorrect {
+    font-size: 30px;
+    color: red;
+    font-weight: bold;
+    text-shadow: 2px 2px black;
+    padding: 2px;
 }
