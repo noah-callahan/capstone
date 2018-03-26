@@ -14,8 +14,7 @@ var input = null;
 var wordArr = null;
 var index = null;
 var score = null;
-var music = null;
-var music_icon = null;
+var music_status = null;
 
 function randomWord(){
     return words[Math.floor(Math.random() * words.length)];
@@ -29,11 +28,15 @@ function randomPoints(){
 };
 
 document.getElementById("music-icon").addEventListener("click", function pausePlay(){
-    music_icon = document.getElementById("music-icon").src = "sad.png";
-    music = document.getElementById("music");
-    music.pause();
+    music_status = document.getElementById("music");
+    if(music_status.paused){
+        music_status.play();
+        document.getElementById("music-icon").src = "happy.png";
+    } else {
+        music_status.pause();
+        document.getElementById("music-icon").src = "sad.png";
+    }
 });
-
 
 
 document.getElementById("random-word").addEventListener("click", function(){
@@ -76,7 +79,10 @@ function myGuess() {
                 } if(badTry == 4){
                     alert("Sorry, you lost!");
                     location.reload();
+                } if(goodTry == wordArr.length){
+                    alert("You win!");
                 }
+                
                 randomPoints()
                 document.getElementById("turn-points").innerHTML = worth;
 }
