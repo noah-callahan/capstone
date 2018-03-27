@@ -19,7 +19,7 @@
 
                 <div>
                     <span class="close">[&times;]</span>
-                    <h1>You win!</h1>
+                    <h1 id="win-lose">You win!</h1>
                     <h2>Play Again?</h2>
                     
                     <button type="button" class="btn-primary" id="reset">Sure</button>
@@ -38,7 +38,8 @@
     <button type="button" id="reset" class="btn-danger bold" onclick="location.reload();">Reset</button>
 
 </div>
-    <img src="happy.png" alt="" id="music-icon">
+
+    <img src="images/happy.png" alt="" id="music-icon">
 
     <div class="word-area">
         <div id="0"></div><div id="1"></div><div id="2"></div><div id="3"></div><div id="4"></div><div id="5"></div><div id="6"></div><div id="7"></div><div id="8"></div><div id="9"></div><div id="10"></div><div id="11"></div>
@@ -62,5 +63,7 @@
     <p class="info">Your score is: <span id="total-score" class="important">0</span></p>
 
 </body>
+
 <script src="main.js"></script>
+
 </html>

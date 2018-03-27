@@ -33,23 +33,21 @@ document.getElementById("music-icon").addEventListener("click", function pausePl
     music_status = document.getElementById("music");
     if(music_status.paused){
         music_status.play();
-        document.getElementById("music-icon").src = "happy.png";
+        document.getElementById("music-icon").src = "images/happy.png";
     } else {
         music_status.pause();
-        document.getElementById("music-icon").src = "sad.png";
+        document.getElementById("music-icon").src = "images/sad.png";
     }
 });
 
 
 document.getElementById("random-word").addEventListener("click", function(){
     word = randomWord();
-    console.log(word);
     document.getElementById("length").innerHTML = word.length;
     index = words.indexOf(word);
     document.getElementById("hint").innerHTML = hints[index];
     wordArr = word.split('');
     randomPoints();
-    console.log(worth);
     document.getElementById("turn-points").innerHTML = worth;
 });
 
@@ -76,14 +74,19 @@ function myGuess() {
                     document.getElementById("total-score").innerHTML = score;
                 }
                 } else {
-                    alert("Sorry, try again!");
                     badTry++;
                     document.getElementById("bad-try").innerHTML = badTry;
                     score -= 25;
                     document.getElementById("total-score").innerHTML = score;
                 } if(badTry == 4){
-                    alert("Sorry, you lost!");
-                    location.reload();
+                    setTimeout(function() {
+                        document.getElementById("win-lose").innerHTML = "You lose!"
+                        popup.style.display = "block";
+                        
+                    }, 500);
+                    span.onclick = function() {
+                        popup.style.display = "none";
+                    }         
                 } if(goodTry == wordArr.length){
                     setTimeout(function() {
                         popup.style.display = "block";
